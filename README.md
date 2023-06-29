@@ -17,6 +17,10 @@
 ## Usage
 
 1. Run `transferUVs` from your shelf.
+2. Select an object that has UVs you want to transfer.
+3. Click `Select base object` button and select an object that you want to duplicate UVs.
+4. Select an object that you want to transfer UVs.
+5. Click `Execute` button.
 
 ## License
 
