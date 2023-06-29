@@ -36,13 +36,13 @@ _DEFAULT_PYTHON_ICON_NAME = "pythonFamily.png"
 # ex) _SOURCE_TYPE = "python"
 ####################################################################################################
 # About module file
-_MODULE_FILE_NAME = "transferUVs.mod"
-_MODULE_NAME = "transferUVs"
+_MODULE_FILE_NAME = "transferUVSets.mod"
+_MODULE_NAME = "transferUVSets"
 _MODULE_VERSION = "1.0.0"
 _SCRIPTS_DIR_NAME = "src"
 
 # About shelf button
-_COMMAND = """import maya_transfer_uvs_ui as scr<COMMAND_NEW_LINE>reload(scr)<COMMAND_NEW_LINE>scr.execute()<COMMAND_NEW_LINE>"""
+_COMMAND = """import maya_transfer_uv_sets_ui as scr<COMMAND_NEW_LINE>reload(scr)<COMMAND_NEW_LINE>scr.execute()<COMMAND_NEW_LINE>"""
 _ICON_DIR_NAME = "icons"
 _ICON_FILE_NAME = "pythonFamily.png" # default: "commandButton.png" or "pythonFamily.png"
 _SOURCE_TYPE = "python" # "mel" or "python"
