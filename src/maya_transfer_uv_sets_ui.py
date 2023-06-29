@@ -9,12 +9,12 @@ import maya.cmds as cmds
 from maya.app.general.mayaMixin import MayaQWidgetBaseMixin
 from PySide2 import QtCore, QtWidgets
 
-import maya_transfer_uvs as mtu
-reload(mtu)
+import maya_transfer_uv_sets as mtus
+reload(mtus)
 
-WINDOW_TITLE = "Transfer UVs"
+WINDOW_TITLE = "Transfer UV Sets"
 
-class TransferUVsUI(MayaQWidgetBaseMixin, QtWidgets.QWidget):
+class TransferUVSetsUI(MayaQWidgetBaseMixin, QtWidgets.QWidget):
     """
     The UI class for the Set Ground tool.
     """
@@ -85,8 +85,8 @@ class TransferUVsUI(MayaQWidgetBaseMixin, QtWidgets.QWidget):
             cmds.warning("No objects selected.")
             return
 
-        # Transfer the UVs
-        mtu.transfer_uvs(base_object=base_object, objects=objects)
+        # Transfer the UV sets
+        mtus.transfer_uv_sets(base_object=base_object, objects=objects)
 
 def execute():
     """
@@ -101,7 +101,7 @@ def execute():
             cmds.deleteUI(WINDOW_TITLE)
 
         # Create the window
-        window = TransferUVsUI()
+        window = TransferUVSetsUI()
         window.show()
     except Exception as e:
         # Print the error message
