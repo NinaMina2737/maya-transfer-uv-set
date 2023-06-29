@@ -5,11 +5,11 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import maya.cmds as cmds
 import traceback
 
-def transfer_uvs(base_object=None, objects=None):
+def transfer_uv_sets(base_object=None, objects=None):
     """
-    Transfers UVs from the base object to the other selected objects.
-    :param base_object: The base object to transfer UVs from.
-    :param objects: The objects to transfer UVs to.
+    Transfers UV sets from the base object to the other selected objects.
+    :param base_object: The base object to transfer UV sets from.
+    :param objects: The objects to transfer UV sets to.
     """
     # If no objects are specified, use the selected objects
     if objects is None:
@@ -20,9 +20,9 @@ def transfer_uvs(base_object=None, objects=None):
     if base_object is None:
         base_object = objects.pop(0)
 
-    # Transfer UVs from the base object to the other selected objects
+    # Transfer UV sets from the base object to the other selected objects
     for object in objects:
-        # Select the base object and the object to transfer UVs to
+        # Select the base object and the object to transfer UV sets to
         cmds.select([base_object, object])
         # Sample Space: 0=local, 1=world, 2=UV, 3=component
         # Transfer UVs: 0=off, 1=closestPoint, 2=closestComponent, 3=closestCorner, 4=closestBorder, 5=closestPolygon, 6=sharedPolygon, 7=sharedPosition
@@ -34,7 +34,7 @@ def execute(base_object=None, objects=None):
         # Open an undo chunk
         cmds.undoInfo(openChunk=True)
         # Execute the script
-        transfer_uvs(base_object=base_object, objects=objects)
+        transfer_uv_sets(base_object=base_object, objects=objects)
     except Exception as e:
         # Print the error message
         cmds.warning("An error occurred: {}".format(str(e)))
